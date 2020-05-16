@@ -9,7 +9,7 @@ A database project in which we use a craft beer data set to build a simple user 
 
 
 Task Timeline:\
-write queries (consider user entered/selected variables) -> craft beer dataset
+<li> write queries (consider user entered/selected variables) -> craft beer dataset </li>
 build backend
 crawl API for additional information
 beautify webpage
