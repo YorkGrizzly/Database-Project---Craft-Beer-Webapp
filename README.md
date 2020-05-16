@@ -8,7 +8,7 @@ Else use default settings for website version.\
 A database project in which we use a craft beer data set to build a simple user interface web page.
 
 
-<br> Task Timeline: </br>
+<b> Task Timeline: </b>
 <li> write queries (consider user entered/selected variables) -> craft beer dataset </li>
 <li> build backend </li>
 <li> crawl API for additional information </li>
