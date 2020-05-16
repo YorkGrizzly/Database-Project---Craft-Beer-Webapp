@@ -12,11 +12,11 @@ Task Timeline:
 <li> write queries (consider user entered/selected variables) -> craft beer dataset </li>
 <li> build backend </li>
 <li> crawl API for additional information </li>
-<li> beautify webpage </li>
+<li> beautify webpage </li>\
 
 
-05.16\
-05.23\
+05.16 Discuss Layout and Overview of Project Procession\
+05.24 Design Queries, Find Backend Resources\
 05.30\
 06.06\
 06.13
