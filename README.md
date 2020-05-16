@@ -6,3 +6,16 @@ ex: 2020.01.01 "fixed bug in query file"\
 Else use default settings for website version.\
 \
 A database project in which we use a craft beer data set to build a simple user interface web page.
+
+
+Task Timeline:\
+write queries (consider user entered/selected variables) -> craft beer dataset
+build backend
+crawl API for additional information
+beautify webpage
+
+05.16
+05.23
+05.30
+06.06
+06.13
