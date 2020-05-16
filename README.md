@@ -8,11 +8,11 @@ Else use default settings for website version.\
 A database project in which we use a craft beer data set to build a simple user interface web page.
 
 
-Task Timeline:\
+Task Timeline:
 <li> write queries (consider user entered/selected variables) -> craft beer dataset </li>
-build backend
-crawl API for additional information
-beautify webpage
+<li> build backend </li>
+<li> crawl API for additional information </li>
+<li> beautify webpage </li>
 
 05.16\
 05.23\
