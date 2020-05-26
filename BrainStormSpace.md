@@ -9,4 +9,9 @@ multiple beer APIs, can be used to crawl for more information\
 https://rapidapi.com/blog/best-beer-wine-alcohol-api/
 
 
+### Web App References
+Tutorial on building React Frontend + NodeJs/Express Backend <br>
+https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
+
+
 
