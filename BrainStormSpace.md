@@ -14,4 +14,6 @@ Tutorial on building React Frontend + NodeJs/Express Backend <br>
 https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend-and-connect-them-together-c5798926047c/
 
 
+* survey data, ex: map bittering units to type of beer...
+* see if we can split tables by observin dependencies
 
