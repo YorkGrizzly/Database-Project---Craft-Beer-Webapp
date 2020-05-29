@@ -9,3 +9,5 @@ npm install
 ```bash
 npm start
 ```
+
+### Runs on local host via port 3000
