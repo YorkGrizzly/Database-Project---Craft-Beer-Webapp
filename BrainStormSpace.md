@@ -17,3 +17,8 @@ https://www.freecodecamp.org/news/create-a-react-frontend-a-node-express-backend
 * survey data, ex: map bittering units to type of beer...
 * see if we can split tables by observing dependencies
 
+
+
+### Web App Functions
+Beer of the year
+
