@@ -1,0 +1,4 @@
+dataset link: https://drive.google.com/drive/folders/1Apj4eOz8bOQrCNKFGMRMGK0F-38Jdba4?usp=sharing
+
+do not ignore first line when loading csv data into database(no header)
+csv's order is the same as type.txt(in drive)
