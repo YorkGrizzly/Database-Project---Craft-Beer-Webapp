@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
     <title>Craft Beers</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="index.js" async></script> 
   </head>
   <body>
     <!-- Search beers -->
@@ -12,7 +16,6 @@
         <label for="search-beer-name">Search Beer:</label>
         <input type="text" id="search-beer-name" name="name" /><br /><br />
         <!-- radio buttons to select search by condition -->
-        
 
         <input
           type="radio"
@@ -81,7 +84,7 @@
         <label for="filter-style">Appearance</label><br />
 
         <br />
-        <input type="submit" id="rank-beers-btn" value="Rank 'em" />
+        <input type="submit" id="rank-beers-btn" value="Rank 'Em" />
       </form>
     </div>
 
@@ -90,10 +93,11 @@
     <div class="leaderboards">
       <h2>LEADERBOARDS</h2>
       <!-- LEADERBOARDS -->
-      <!-- top 5 breweries (with at least 100 reviews)-->
-      <div class="top-5-breweries">
-        <h3>1. TOP 5 BREWERIES</h3>
+      <!-- top 10 breweries (with at least 100 reviews)-->
+      <div class="top-10-breweries">
+        <h3>1. TOP 10 BREWERIES</h3>
         <p> (with more than 100 reviews) </p>
+        <div id='top10-board'></div>
       </div>
 
       <br />
@@ -185,9 +189,8 @@
     <!-- random beer generator -->
     <div class="random-generator">
       <h3>RANDOM BEER GENERATOR</h3>
-      <form method="post" action="/random_generate">
-      <input type="submit" id="random-gen-btn" value="Spin The Wheel !" onclick=""/>
-      </form>
+      <input type="submit" id="random-gen-btn" value="Spin The Wheel !" onclick="test()"/>
+      <div id="rand-result"></div> 
     </div>
 
     <br />
@@ -229,13 +232,13 @@
         <input type="text" id="usr-add" name="usr_add" />
 
         <label for="review-beer-id">Beer ID:</label>
-        <input type="text" id="review-beer-id" name="review_beer_id" />
+        <input type="text" id="review-beer-id" name="review_beer_id"/>
       </span>
       <br />
       <br />
       <label for="add-overall">Overall Rating:</label>
       <select id="add-overall" name="add_overall">
-        <option value="0.0">0.0</option>
+        <option value="0.0" selected>0.0</option>
         <option value="0.5">0.5</option>
         <option value="1.0">1.0</option>
         <option value="2.0">2.0</option>
@@ -414,3 +417,4 @@
     <br /><br /><br />
   </body>
 </html>
+
