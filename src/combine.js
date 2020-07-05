@@ -22,6 +22,16 @@ const RAND_GEN = `SELECT beer_name, beer_abv, beer_style
                   ORDER BY RAND() 
                   LIMIT 1`;
 
+const SEARCH_BY_NAME = `SELECT beer.beer_name, beer.beer_abv, beer.beer_style, review.review_overall, beer.beer_id  
+                        FROM beer, review
+                        WHERE beer.beer_id = review.review_id AND beer.beer_name 
+                        LIKE ?`;
+
+const SEARCH_BY_BREWERY = `SELECT beer.beer_name, beer.beer_abv, beer.beer_style, brewery.brewery_name
+                            FROM beer, brewery
+                            WHERE beer.brewery_id = brewery.brewery_id AND brewery.brewery_name 
+                            LIKE ?`;
+
 const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -59,6 +69,38 @@ app.get('/top_ten', (req, res) => {
 
 app.get('/gen_rand', (req, res) => {
     connection.query(RAND_GEN, (err, results) => {
+        if(err) {
+            return res.send(err)
+        }
+        else {
+            return res.json({
+                data: results
+            })
+        }
+    })
+});
+
+app.get('/search/beer_name/:query', (req, res) => {
+    let query = req.params.query;
+    query = '%' + query + '%';
+    console.log(query);
+    connection.query(SEARCH_BY_NAME, [query], (err, results) => {
+        if(err) {
+            return res.send(err)
+        }
+        else {
+            return res.json({
+                data: results
+            })
+        }
+    })
+});
+
+app.get('/search/brewery_name/:query', (req, res) => {
+    let query = req.params.query;
+    query = '%' + query + '%';
+    console.log(query);
+    connection.query(SEARCH_BY_BREWERY, [query], (err, results) => {
         if(err) {
             return res.send(err)
         }
