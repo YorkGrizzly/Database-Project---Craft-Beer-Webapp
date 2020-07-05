@@ -23,4 +23,33 @@ request.onload = function () {
   }
 };
 
+
+
+document.getElementById("random-gen-btn").onclick = function() {
+	var reqst = new XMLHttpRequest();
+	reqst.open("GET",  "http://localhost:4000/gen_rand", true);
+	console.log("loaded");
+	reqst.onload = function() {
+		
+  	var result = JSON.parse(this.response);
+  	if (reqst.status >= 200 && reqst.status < 400) {
+  		result.data.forEach(rand_gen => {
+  			var html =
+  				'<div>' +
+  				"Have you tried??" +
+  				'</div><div><b>Beer Name</b>: ' +
+  				rand_gen.beer_name +
+  				'</div><div><b>Alcohol Content</b>: ' +
+  				rand_gen.beer_abv +
+  				'%</div><br />' +
+  				'<div><b>Beer Style</b>: '+
+  				rand_gen.beer_style +
+  				'</div>';
+  		$("#random-gen-btn").append(html);
+  	})
+  } else {
+    alert("It's not working!");
+  }
+}};
+
 request.send();
