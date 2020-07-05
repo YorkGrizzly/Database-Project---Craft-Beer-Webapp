@@ -17,6 +17,11 @@ const TOP_TEN = `SELECT brewery.brewery_name, avg(review.review_overall) as avg_
                 ORDER BY avg_review DESC
                 LIMIT 10`;
 
+const RAND_GEN = `SELECT beer_name, beer_abv, beer_style 
+                  FROM beer 
+                  ORDER BY RAND() 
+                  LIMIT 1`;
+
 const connection = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -51,6 +56,38 @@ app.get('/top_ten', (req, res) => {
         }
     })
 });
+
+app.get('/gen_rand', (req, res) => {
+    connection.query(RAND_GEN, (err, results) => {
+        if(err) {
+            return res.send(err)
+        }
+        else {
+            return res.json({
+                data: results
+            })
+        }
+    })
+});
+
+app.get('/add_review', (req, res) => {
+    console.log("sadkjf")
+    const {review_beer_id, review_overall, review_aroma, review_taste, review_palate, review_appearance, review_profilename} = req.query;
+    // var beer_id = req.body.add_overall;
+    console.log(review_beer_id);
+    const INSERT_BREWERIES_QUERY = `INSERT INTO review2 (beer_id, review_overall, review_time, review_aroma, review_taste, review_palate, review_appearance, review_profilename) 
+    VALUES (‘${review_beer_id}’, ‘${add_overall}’, UNIX_TIMESTAMP(), ‘${add_aroma}’, ‘${add_taste}’, ‘${add_palate}’, ‘${add_appearance}’, ‘${review_profilename}’);
+    `;
+    connection.query(INSERT_BREWERIES_QUERY, (err, results) => {
+        if (err) {
+            return res.send(err)
+        }
+        else{
+            return res.send("ran sucessfully");
+        } 
+    });
+    
+})
 
 
 // app.get('/breweries/add', (req, res) => {
