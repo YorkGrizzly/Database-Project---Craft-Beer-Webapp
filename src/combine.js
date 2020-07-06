@@ -117,6 +117,25 @@ app.get("/search/brewery_name/:query", (req, res) => {
 
 // })
 
+app.get('/add_review', (req, res) => {
+    console.log("sadkjf")
+    const {review_beer_id, review_overall, review_aroma, review_taste, review_palate, review_appearance, review_profilename} = req.query;
+    // var beer_id = req.body.add_overall;
+    console.log(review_beer_id);
+    const INSERT_BREWERIES_QUERY = `INSERT INTO review2 (beer_id, review_overall, review_time, review_aroma, review_taste, review_palate, review_appearance, review_profilename) 
+    VALUES (‘${review_beer_id}’, ‘${add_overall}’, UNIX_TIMESTAMP(), ‘${add_aroma}’, ‘${add_taste}’, ‘${add_palate}’, ‘${add_appearance}’, ‘${review_profilename}’);
+    `;
+    connection.query(INSERT_BREWERIES_QUERY, (err, results) => {
+        if (err) {
+            return res.send(err)
+        }
+        else{
+            return res.send("ran sucessfully");
+        } 
+    });
+    
+})
+
 app.listen(4000, () => {
   console.log("The server is listening on port 4000");
 });
