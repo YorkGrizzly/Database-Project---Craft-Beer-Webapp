@@ -27,7 +27,31 @@ const SEARCH_BY_BREWERY = `SELECT beer.beer_name, beer.beer_abv, beer.beer_style
                             WHERE beer.brewery_id = brewery.brewery_id AND brewery.brewery_name 
                             LIKE ?`;
 
+const SEARCH_REVIEW_BY_BEER_ID = `SELECT review.beer_id, beer.beer_name, review.review_profilename, 
+                                          FROM_UNIXTIME(review.review_time) as review_time, review.review_overall, 
+                                          review.review_aroma, review.review_appearance, review.review_palate, 
+                                          review.review_taste, review.review_id
+                                  FROM review, beer
+                                  WHERE review.beer_id = ? AND review.beer_id = beer.beer_id
+                                  ORDER BY review.review_overall DESC`;
 
+const RETRIEVE_LATEST_200_REVIEW = `SELECT review.beer_id, beer.beer_name, review.review_profilename, 
+                                  FROM_UNIXTIME(review.review_time) as review_time, review.review_overall, 
+                                  review.review_aroma, review.review_appearance, review.review_palate, 
+                                  review.review_taste, review.review_id
+                                FROM review, beer
+                                WHERE review.beer_id = beer.beer_id
+                                ORDER BY review_time DESC
+                                LIMIT 200`;
+
+const SEARCH_REVIEW_BY_USER = `SELECT review.beer_id, beer.beer_name, review.review_profilename, 
+                                  review.review_id ,FROM_UNIXTIME(review.review_time) as review_time, 
+                                  review.review_overall, review.review_aroma, review.review_appearance, 
+                                  review.review_palate, review.review_taste
+                                FROM review, beer
+                                WHERE beer.beer_id = review.beer_id 
+                                AND review.review_profilename LIKE ?
+                                ORDER BY review.review_time, review.beer_id DESC`;
 
 const connection = mysql.createPool({
   host: "localhost",
@@ -93,6 +117,47 @@ app.get("/search/brewery_name/:query", (req, res) => {
   query = "%" + query + "%";
   console.log(query);
   connection.query(SEARCH_BY_BREWERY, [query], (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.json({
+        data: results,
+      });
+    }
+  });
+});
+
+app.get("/search/beer_id/:query", (req, res) => {
+  let query = req.params.query;
+  console.log(query);
+  connection.query(SEARCH_REVIEW_BY_BEER_ID, [query], (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.json({
+        data: results,
+      });
+    }
+  });
+});
+
+app.get("/review", (req, res) => {
+  connection.query(RETRIEVE_LATEST_200_REVIEW, (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.json({
+        data: results,
+      });
+    }
+  });
+});
+
+app.get("/search/user_name/:query", (req, res) => {
+  let query = req.params.query;
+  query = "%" + query + "%";
+  console.log(query);
+  connection.query(SEARCH_REVIEW_BY_USER, [query], (err, results) => {
     if (err) {
       return res.send(err);
     } else {
