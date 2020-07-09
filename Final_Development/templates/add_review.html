@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Beers App</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="../js/add_review.js" async></script>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="rank_by.html">Rank Beers</a></li>
+        <li><a href="top_ten.html">Top 10 Breweries</a></li>
+        <li><a href="seasonal_choice.html">Seasonal Choice</a></li>
+        <li><a href="beer_of_year.html">Beer Of The Year</a></li>
+        <li><a href="top_hit.html">Top Hit Of The Year</a></li>
+        <li><a href="gen_random.html">Random Beer Recommendation</a></li>
+        <li><a href="review.html">Search Reviews Of A Beer</a></li>
+        <li><a href="user-review.html">Search Reviews By User</a></li>
+        <li><a href="add_review.html">Add Review</a></li>
+        <li><a href="edit_review.html">Edit Review</a></li>
+
+      </ul>
+    </div>
+    <div id="root">
+      <div class="add-review">
+        <h3>ADD REVIEW</h3>
+        <form>
+            <label for="usr-add">User Name:</label>
+            <input type="text" id="usr-add" name="usr_add" />
+            <br/>
+            <br/>
+            <label for="review-beer-id">Beer ID:</label>
+            <input type="text" id="review-beer-id" name="review_beer_id" />
+          <br />
+          <br />
+          <label for="add-overall">Overall Rating:</label>
+          <select id="add-overall" name="add_overall">
+            <option value="0.0">0.0</option>
+            <option value="0.5">0.5</option>
+            <option value="1.0">1.0</option>
+            <option value="2.0">2.0</option>
+            <option value="2.5" selected>2.5</option>
+            <option value="3.0">3.0</option>
+            <option value="3.5">3.5</option>
+            <option value="4.0">4.0</option>
+            <option value="4.5">4.5</option>
+            <option value="5.0">5.0</option>
+          </select>
+          <br />
+          <br />
+          <label for="add-aroma">Aroma Rating:</label>
+          <select id="add-aroma" name="add_aroma">
+            <option value="0.0">0.0</option>
+            <option value="0.5">0.5</option>
+            <option value="1.0">1.0</option>
+            <option value="2.0">2.0</option>
+            <option value="2.5" selected>2.5</option>
+            <option value="3.0">3.0</option>
+            <option value="3.5">3.5</option>
+            <option value="4.0">4.0</option>
+            <option value="4.5">4.5</option>
+            <option value="5.0">5.0</option>
+          </select>
+          <br />
+          <br />
+
+          <label for="add-taste">Taste Rating:</label>
+          <select id="add-taste" name="add_taste">
+            <option value="0.0">0.0</option>
+            <option value="0.5">0.5</option>
+            <option value="1.0">1.0</option>
+            <option value="2.0">2.0</option>
+            <option value="2.5" selected>2.5</option>
+            <option value="3.0">3.0</option>
+            <option value="3.5">3.5</option>
+            <option value="4.0">4.0</option>
+            <option value="4.5">4.5</option>
+            <option value="5.0">5.0</option>
+          </select>
+          <br />
+          <br />
+
+          <label for="add-palate">Palate Rating:</label>
+          <select id="add-palate" name="add_palate">
+            <option value="0.0">0.0</option>
+            <option value="0.5">0.5</option>
+            <option value="1.0">1.0</option>
+            <option value="2.0">2.0</option>
+            <option value="2.5" selected>2.5</option>
+            <option value="3.0">3.0</option>
+            <option value="3.5">3.5</option>
+            <option value="4.0">4.0</option>
+            <option value="4.5">4.5</option>
+            <option value="5.0">5.0</option>
+          </select>
+          <br />
+          <br />
+
+          <label for="add-appearance">Appearance Rating:</label>
+          <select id="add-appearance" name="add_appearance">
+            <option value="0.0">0.0</option>
+            <option value="0.5">0.5</option>
+            <option value="1.0">1.0</option>
+            <option value="2.0">2.0</option>
+            <option value="2.5" selected>2.5</option>
+            <option value="3.0">3.0</option>
+            <option value="3.5">3.5</option>
+            <option value="4.0">4.0</option>
+            <option value="4.5">4.5</option>
+            <option value="5.0">5.0</option>
+          </select>
+          <br />
+          <br />
+
+        </form>
+        <input type="submit" id="add-review-btn" value="Submit Review" />
+
+      <div id="add-review-result">
+        <div id="edit-review-result"></div>
+    </div>
+      </div>
+    </div>
+  </body>
+</html>

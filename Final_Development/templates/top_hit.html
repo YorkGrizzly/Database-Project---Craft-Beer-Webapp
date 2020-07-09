@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Beers App</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="../js/top_hit.js" async></script>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="rank_by.html">Rank Beers</a></li>
+        <li><a href="top_ten.html">Top 10 Breweries</a></li>
+        <li><a href="seasonal_choice.html">Seasonal Choice</a></li>
+        <li><a href="beer_of_year.html">Beer Of The Year</a></li>
+        <li><a href="top_hit.html">Top Hit Of The Year</a></li>
+        <li><a href="gen_random.html">Random Beer Recommendation</a></li>
+        <li><a href="review.html">Search Reviews Of A Beer</a></li>
+        <li><a href="user-review.html">Search Reviews By User</a></li>
+        <li><a href="add_review.html">Add Review</a></li>
+        <li><a href="edit_review.html">Edit Review</a></li>
+      </ul>
+    </div>
+    <div id="root">
+      <div class="top-hit-of-the-year">
+        <h3>4. TOP HIT OF THE YEAR</h3>
+        <p>(Beer with the most reviews within a particular year)</p>
+        <br />
+        <form>
+          <label for="thoty-year"></label>
+          <select id="thoty-year" name="thoty-year">
+            <option value="" disabled selected>Choose a Year</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+          </select>
+        </form>
+        <div id="thoty-result"></div>
+
+      </div>
+    </div>
+  </body>
+</html>

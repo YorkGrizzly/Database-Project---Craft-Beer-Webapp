@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Beers App</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="../js/index.js" async></script>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="rank_by.html">Rank Beers</a></li>
+        <li><a href="top_ten.html">Top 10 Breweries</a></li>
+        <li><a href="seasonal_choice.html">Seasonal Choice</a></li>
+        <li><a href="beer_of_year.html">Beer Of The Year</a></li>
+        <li><a href="top_hit.html">Top Hit Of The Year</a></li>
+        <li><a href="gen_random.html">Random Beer Recommendation</a></li>
+        <li><a href="review.html">Search Reviews Of A Beer</a></li>
+        <li><a href="user-review.html">Search Reviews By User</a></li>
+        <li><a href="add_review.html">Add Review</a></li>
+        <li><a href="edit_review.html">Edit Review</a></li>
+
+      </ul>
+    </div>
+    <div id="root" >
+<h2>Welcome to the Craft Beers Web App Site!</h2>
+<h3><i>Here we provide a diverse collection interfaces to let you interacte with our data and find the beer of your dreams!</i></h3>
+<h4>Our functionalities include: </h4>
+<dl>
+  <dt>Search For Beers & Breweries</dt>
+  <dt>Rank Beers According to User Reviews</dt>
+  <dt>Leaderboards of A Variety of Comparisons in our Data</dt>
+  <dt>Interactive interfaces for Users to Add & Edit Reviews</dt>
+</dl>
+<!-- Search beers -->
+    <!-- <div class="search-beer">
+      <h3>SEARCH BEERS</h3>
+      <form>
+        <label for="search-beer-name">Search Beer:</label>
+        <input type="text" id="search-beer-name" name="name" /><br /><br />
+
+        <input
+          type="radio"
+          id="by-brewery"
+          name="search-by"
+          value="by_brewery"
+        />
+        <label for="by-brewery">By Brewery</label><br />
+
+        <input type="radio" id="by-name" name="search-by" value="by_name" checked/>
+        <label for="by-name">By Beer Name</label><br />
+
+        <br />
+        <input type="submit" id="search-beer-btn" value="Search" />
+      </form>
+    </div> -->
+
+    <!-- <br />
+    <br /> -->
+    <!-- Rank beer by ratings -->
+    <!-- <div class="rank-beers">
+      <h3>RANK BEERS</h3>
+      <form>
+        <label for="min-ratings">Minimum Number of Ratings:</label>
+        <select id="min-ratings" name="min-ratings">
+          <option value="1" selected>1</option>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="300">300</option>
+          <option value="400">400</option>
+          <option value="500">500</option>
+        </select>
+
+        <br />
+        <br /> -->
+        <!-- rank condition -->
+        <!-- <input
+          type="radio"
+          id="filter-all"
+          name="filter-by"
+          value="all"
+          checked
+        />
+        <label for="rank-all">Overall</label><br />
+
+        <input type="radio" id="rank-aroma" name="rank-by" value="aroma" />
+        <label for="rank-aroma">Aroma</label><br />
+
+        <input type="radio" id="rank-taste" name="rank-by" value="taste" />
+        <label for="rank-taste">Taste</label><br />
+
+        <input type="radio" id="rank-style" name="rank-by" value="style" />
+        <label for="rank-style">Style</label><br />
+
+        <input type="radio" id="rank-appearance" name="rank-by" value="appearance" />
+        <label for="rank-appearance">Appearance</label><br />
+
+        <br />
+        <input type="submit" id="rank-beers-btn" value="Rank 'Em" />
+      </form>
+    </div>
+
+    <br />
+    <br /> -->
+    <!-- <div class="leaderboards">
+      <h2>LEADERBOARDS</h2> -->
+      <!-- LEADERBOARDS -->
+      <!-- top 10 breweries (with at least 100 reviews)-->
+      <!-- <div class="top-10-breweries">
+        <h3>1. TOP 10 BREWERIES</h3>
+        <p>(with more than 100 reviews)</p>
+        <div id="top10-board"></div>
+      </div> -->
+
+      <!-- <br />  -->
+      <!-- seasonal choice -->
+      <!-- <div class="seasonal-choice">
+        <h3>2. SEASONAL CHOICE</h3>
+        <form>
+          <label for="season">Season:</label>
+          <select id="season" name="season">
+            <option value="spring" selected>Spring</option>
+            <option value="summer">Summer</option>
+            <option value="autumn">Autumn</option>
+            <option value="winter">Winter</option>
+          </select>
+        </form>
+      </div> -->
+
+      <!-- <br /> -->
+      <!-- beer of the year -->
+      <!-- <div class="beer-of-the-year">
+        <h3>3. BEER OF THE YEAR</h3>
+        <form>
+          <label for="boty-year"></label>
+          <select id="boty-year" name="boty-year">
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010" selected>2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+          </select>
+        </form>
+      </div> -->
+
+      <!-- <br /> -->
+      <!-- top hit of the year -->
+      <!-- <div class="top-hit-of-the-year">
+        <h3>4. TOP HIT OF THE YEAR</h3>
+        <p>(Beer with the most reviews within a particular year)</p>
+        <br/>
+        <form>
+          <label for="thoty-year"></label>
+          <select id="thoty-year" name="thoty-year">
+          <option value="" disabled selected>Choose a Year</option>
+          <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+          </select>
+        </form>
+      </div>
+    </div> -->
+
+    <!-- <br />
+    <br /> -->
+    <!-- random beer generator -->
+    <!-- <div class="random-generator">
+      <h3>RANDOM BEER GENERATOR</h3>
+      <input type="submit" id="random-gen-btn" value="Spin The Wheel !"/>
+      <div id="rand-result"></div> 
+    </div> -->
+
+    <!-- <br />
+    <br /> -->
+    <!-- reviews of a particular beer -->
+    <!-- <div class="reviews-of-beer">
+      <h3>SEARCH REVIEWS OF A BEER</h3>
+      <form>
+        <label for="beer-id">Enter Beer ID:</label>
+        <input
+          type="text"
+          id="review-dis-beer-id"
+          name="review_dis_beer_id"
+        /><br /><br />
+      </form>
+        <input type="submit" id="search-beer-btn" value="Search" />
+    </div> -->
+
+    <!-- <br />
+    <br /> -->
+    <!-- search reviews by username -->
+    <!-- <div class="search-user">
+      <h3>SEARCH REVIEWS BY USER</h3>
+      <form>
+        <label for="usr-name">Search for User:</label>
+        <input type="text" id="usr-name" name="usr-name" /><br /><br />
+        <input type="submit" id="search-usr-btn" value="Search" />
+      </form>
+    </div> -->
+
+    <!-- <br />
+    <br /> -->
+    <!-- add review / rating -->
+    <!-- <div class="add-review">
+      <h3>ADD REVIEW</h3>
+      <form>
+          <label for="usr-add">User Name:</label>
+          <input type="text" id="usr-add" name="usr_add" />
+          <br/>
+          <br/>
+          <label for="review-beer-id">Beer ID:</label>
+          <input type="text" id="review-beer-id" name="review_beer_id" />
+        <br />
+        <br />
+        <label for="add-overall">Overall Rating:</label>
+        <select id="add-overall" name="add_overall">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+        <label for="add-aroma">Aroma Rating:</label>
+        <select id="add-aroma" name="add_aroma">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="add-taste">Taste Rating:</label>
+        <select id="add-taste" name="add_taste">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="add-palate">Palate Rating:</label>
+        <select id="add-palate" name="add_palate">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="add-appearance">Appearance Rating:</label>
+        <select id="add-appearance" name="add_appearance">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+        <input type="submit" id="add-review-btn" value="Submit Review" />
+      </form>
+    </div> -->
+
+    <!-- <br />
+    <br /> -->
+    <!-- edit review / rating -->
+    <!-- <div class="edit-review">
+      <h3>EDIT REVIEW</h3>
+      <form>
+        <span>
+          <label for="usr-edit">Review ID:</label>
+          <input type="text" id="usr-edit" name="edit_review_id" />
+        </span>
+        <br />
+        <br />
+        <label for="edit-overall">Overall Rating:</label>
+        <select id="edit-overall" name="edit_overall">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+        <label for="edit-aroma">Aroma Rating:</label>
+        <select id="edit-aroma" name="edit_aroma">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="edit-taste">Taste Rating:</label>
+        <select id="edit-taste" name="edit_taste">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="edit-palate">Palate Rating:</label>
+        <select id="edit-palate" name="edit_palate">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+        <label for="edit-appearance">Appearance Rating:</label>
+        <select id="edit-appearance" name="edit_appearance">
+          <option value="0.0">0.0</option>
+          <option value="0.5">0.5</option>
+          <option value="1.0">1.0</option>
+          <option value="2.0">2.0</option>
+          <option value="2.5" selected>2.5</option>
+          <option value="3.0">3.0</option>
+          <option value="3.5">3.5</option>
+          <option value="4.0">4.0</option>
+          <option value="4.5">4.5</option>
+          <option value="5.0">5.0</option>
+        </select>
+        <br />
+        <br />
+
+      </form>
+        <input type="submit" id="edit-review-btn" value="Submit Review" />
+    </div> -->
+
+    <br /><br /><br />
+  </div>
+  </body>
+</html>

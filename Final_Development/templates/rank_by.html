@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Craft Beers App</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="../js/rank_by.js" async></script>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="rank_by.html">Rank Beers</a></li>
+        <li><a href="top_ten.html">Top 10 Breweries</a></li>
+        <li><a href="seasonal_choice.html">Seasonal Choice</a></li>
+        <li><a href="beer_of_year.html">Beer Of The Year</a></li>
+        <li><a href="top_hit.html">Top Hit Of The Year</a></li>
+        <li><a href="gen_random.html">Random Beer Recommendation</a></li>
+        <li><a href="review.html">Search Reviews Of A Beer</a></li>
+        <li><a href="user-review.html">Search Reviews By User</a></li>
+        <li><a href="add_review.html">Add Review</a></li>
+        <li><a href="edit_review.html">Edit Review</a></li>
+      </ul>
+    </div>
+    <div id="root">
+      <div class="rank-beers">
+        <h3>RANK BEERS</h3>
+        <p>(The first 100)</p>
+        <form>
+          <label for="min-ratings">Minimum Number of Ratings:</label>
+          <select id="min-ratings" name="min-ratings">
+            <option value="1" selected>1</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="300">300</option>
+            <option value="400">400</option>
+            <option value="500">500</option>
+          </select>
+
+          <br />
+          <br />
+          <!-- rank condition -->
+          <input type="radio" id="rank-all" name="rank-by" value="overall" checked />
+          <label for="rank-all">Overall</label><br />
+
+          <input type="radio" id="rank-aroma" name="rank-by" value="aroma" />
+          <label for="rank-aroma">Aroma</label><br />
+
+          <input type="radio" id="rank-taste" name="rank-by" value="taste" />
+          <label for="rank-taste">Taste</label><br />
+
+          <input type="radio" id="rank-palate" name="rank-by" value="palate" />
+          <label for="rank-palate">Palate</label><br />
+
+          <input
+            type="radio"
+            id="rank-appearance"
+            name="rank-by"
+            value="appearance"
+          />
+          <label for="rank-appearance">Appearance</label><br />
+
+          <br />
+        </form>
+        <input type="submit" id="rank-beers-btn" value="Rank 'Em" />
+
+        <div id="rank-result"></div>
+      </div>
+    </div>
+  </body>
+</html>

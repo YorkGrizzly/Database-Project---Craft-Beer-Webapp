@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Craft Beers App</title>
+  <link href="../css/style.css" rel="stylesheet" />
+
+  <script src="../js/review.js"></script>
+</head>
+
+<body>
+  <div class="nav">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="search.html">Search</a></li>
+      <li><a href="rank_by.html">Rank Beers</a></li>
+      <li><a href="top_ten.html">Top 10 Breweries</a></li>
+      <li><a href="seasonal_choice.html">Seasonal Choice</a></li>
+      <li><a href="beer_of_year.html">Beer Of The Year</a></li>
+      <li><a href="top_hit.html">Top Hit Of The Year</a></li>
+      <li><a href="gen_random.html">Random Beer Recommendation</a></li>
+      <li><a href="review.html">Search Reviews Of A Beer</a></li>
+      <li><a href="user-review.html">Search Reviews By User</a></li>
+      <li><a href="add_review.html">Add Review</a></li>
+      <li><a href="edit_review.html">Edit Review</a></li>
+    </ul>
+  </div>
+  <div id="root">
+
+    <!-- reviews of a particular beer -->
+    <div class="reviews-of-beer">
+      <h3>SEARCH REVIEWS OF A BEER</h3>
+      <form>
+        <label for="beer-id">Enter Beer ID:</label>
+        <input type="text" id="review-dis-beer-id" name="review_dis_beer_id" /><br /><br />
+        <input type="submit" id="search-beer-btn" value="Search" />
+      </form>
+    </div>
+    <div id="review-result">
+      
+    </div>
+</body>
+
+</html>
