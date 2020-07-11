@@ -56,7 +56,7 @@ const SEARCH_REVIEW_BY_USER = `SELECT review.beer_id, beer.beer_name, review.rev
 const connection = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "1311811Be@n",
+  password: "",
   database: "craftbeers",
 });
 
