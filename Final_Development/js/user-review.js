@@ -26,7 +26,6 @@ if (query.usr_name != "" && query.usr_name != null) {
 request.onload = function () {
   var result = JSON.parse(this.response);
   if (request.status >= 200 && request.status < 400) {
-    document.getElementById("search-usr-btn").onclick = function () {
       if (result.data == "") {
         const parent = document.getElementById("review-result");
         const html = document.createElement("div");
@@ -123,7 +122,6 @@ request.onload = function () {
           row.appendChild(p8);
         });
       }
-    };
   } else {
     alert("It's not working!");
   }
