@@ -2,7 +2,7 @@
 
 A database project where we used a beer dataset with reviews and implement a web application with it.
 
-<br/>
+
 ## Overview of Directories
 - <b>css</b> - holds style sheets of our web application
 - <b>js</b> - the frontend javascript source code of the application, the codes are modularized so that every file is an implementation of a function
@@ -11,7 +11,7 @@ A database project where we used a beer dataset with reviews and implement a web
 - <i>dataset.txt</i> - holds a google drive link, within which are the dataset in csv format and create table sql files for the database backend
 - <i>combine.js</i> - the backend source code of the web application
 
-<br/>
+
 ## How to Use
 1. Run the <i>.sql</i> files to create tables in MySQL
 2. Configure the database to your own database in the <i>combine.js</i> file
