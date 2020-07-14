@@ -270,7 +270,7 @@ app.get("/add_review", (req, res) => {
     add_appearance,
   } = req.query;
   // var beer_id = req.body.add_overall;
-  const ADD_REVIEW = `INSERT INTO review2 (beer_id, review_overall, review_time, review_aroma, review_taste, review_palate, review_appearance, review_profilename) 
+  const ADD_REVIEW = `INSERT INTO review (beer_id, review_overall, review_time, review_aroma, review_taste, review_palate, review_appearance, review_profilename) 
   VALUES (${beer_id}, ${add_overall}, UNIX_TIMESTAMP(), ${add_aroma}, ${add_taste}, ${add_palate}, ${add_appearance}, '${profilename}')`;
   connection.query(ADD_REVIEW, (err, results) => {
     if (err) {
@@ -292,7 +292,7 @@ app.get("/edit_review", (req, res) => {
     edit_appearance,
   } = req.query;
   // var beer_id = req.body.add_overall;
-  const EDIT_REVIEW = `UPDATE review2 
+  const EDIT_REVIEW = `UPDATE review 
   SET review_overall = ${edit_overall}, review_time = UNIX_TIMESTAMP(), review_aroma = ${edit_aroma}, review_taste = ${edit_taste}, review_palate = ${edit_palate}, review_appearance = ${edit_appearance}  
   WHERE review_id = ${edit_review_id}`;
 
