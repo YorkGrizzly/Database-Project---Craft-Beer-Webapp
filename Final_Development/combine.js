@@ -51,12 +51,12 @@ const SEARCH_REVIEW_BY_USER = `SELECT review.beer_id, beer.beer_name, review.rev
                                FROM review, beer
                                WHERE beer.beer_id = review.beer_id 
                                AND review.review_profilename LIKE ?
-                               ORDER BY review.review_time, review.beer_id DESC`;
+                               ORDER BY review.review_time DESC, review.beer_id`;
 
 const connection = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "",
+  password: "1311811Be@n",
   database: "craftbeers",
 });
 
@@ -305,20 +305,6 @@ app.get("/edit_review", (req, res) => {
     }
   });
 });
-
-// app.get('/breweries/add', (req, res) => {
-//     const {name, city, state} = req.query;
-//     const INSERT_BREWERIES_QUERY = `INSERT INTO test_breweries(name, city, state) VALUES('${name}', '${city}', '${state}')`;
-//     connection.query(INSERT_BREWERIES_QUERY, (err, results) => {
-//         if (err) {
-//             return res.send(err)
-//         }
-//         else{
-//             return res.send("ran sucessfully");
-//         }
-//     });
-
-// })
 
 app.listen(4000, () => {
   console.log("The server is listening on port 4000");
