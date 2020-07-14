@@ -1,4 +1,4 @@
-# Database-Project: Craft-Beer-Webapp
+# Database-Project: Craft Beer Webapp
 
 A database project where we used a beer dataset with reviews and implement a web application with it.
 
