@@ -153,7 +153,7 @@ app.get("/beer_of_year", (req, res) => {
   const { boty_year } = req.query;
   const BEER_OF_THE_YEAR = `SELECT beer.beer_name, beer.beer_abv, beer.beer_style, AVG(review.review_overall) as score 
   FROM beer, review 
-  WHERE beer.beer_id = review.beer_id AND FROM_UNIXreview_time, "%Y") = ${boty_year}
+  WHERE beer.beer_id = review.beer_id AND FROM_UNIX(review_time, "%Y") = ${boty_year}
   GROUP BY beer.beer_id 
   ORDER BY score DESC LIMIT 3`;
   connection.query(BEER_OF_THE_YEAR, (err, results) => {
