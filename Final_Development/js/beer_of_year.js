@@ -5,6 +5,7 @@ $("#boty-year").change(function () {
   request.open("GET", "http://localhost:4000/beer_of_year" + year_param, true);
   request.onload = function () {
     var result = JSON.parse(this.response);
+    console.log(result);
     if (request.status >= 200 && request.status < 400) {
       $("#boty-result").html("");
       if (result["data"].length == 0) {

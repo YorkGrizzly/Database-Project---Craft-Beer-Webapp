@@ -56,7 +56,7 @@ const SEARCH_REVIEW_BY_USER = `SELECT review.beer_id, beer.beer_name, review.rev
 const connection = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "",
+  password: "1311811Be@n",
   database: "craftbeers",
 });
 
@@ -302,6 +302,36 @@ app.get("/edit_review", (req, res) => {
     } else {
       console.log("A review has been editted!");
       return res.send("ran sucessfully");
+    }
+  });
+});
+
+app.get("/check_beer_id", (req, res) => {
+  const { beer_id } = req.query;
+  const CHECK_BEER_ID = `SELECT * FROM beer WHERE beer.beer_id = ${beer_id}`;
+
+  connection.query(CHECK_BEER_ID, (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.json({
+        data: results,
+      });
+    }
+  });
+});
+
+app.get("/check_review_id", (req, res) => {
+  const { review_id } = req.query;
+  const CHECK_REVIEW_ID = `SELECT * FROM review WHERE review.review_id = ${review_id}`;
+
+  connection.query(CHECK_REVIEW_ID, (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      return res.json({
+        data: results,
+      });
     }
   });
 });
