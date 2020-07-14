@@ -56,7 +56,7 @@ const SEARCH_REVIEW_BY_USER = `SELECT review.beer_id, beer.beer_name, review.rev
 const connection = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "",
+  password: "1311811Be@n",
   database: "craftbeers",
 });
 
@@ -153,9 +153,10 @@ app.get("/beer_of_year", (req, res) => {
   const { boty_year } = req.query;
   const BEER_OF_THE_YEAR = `SELECT beer.beer_name, beer.beer_abv, beer.beer_style, AVG(review.review_overall) as score 
   FROM beer, review 
-  WHERE beer.beer_id = review.beer_id AND FROM_UNIX(review_time, "%Y") = ${boty_year}
+  WHERE beer.beer_id = review.beer_id AND FROM_UNIXTIME(review.review_time, "%Y") = ${boty_year}
   GROUP BY beer.beer_id 
-  ORDER BY score DESC LIMIT 3`;
+  ORDER BY score DESC
+  LIMIT 3`;
   connection.query(BEER_OF_THE_YEAR, (err, results) => {
     if (err) {
       return res.send(err);
