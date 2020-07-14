@@ -1,22 +1,11 @@
 # Database-Project---Craft-Beer-Website
 
-If via bash:\
-Note - when comitting, add comment as : <b>[date] "[modified changes]"</b>\
-ex: 2020.01.01 "fixed bug in query file"\
-Else use default settings for website version.\
-\
-A database project in which we use a craft beer data set to build a simple user interface web page.
+A database project where we used a beer dataset with reviews and implement a web application with it.
 
 
-<b> Task Timeline: </b>
-<li> write queries (consider user entered/selected variables) -> craft beer dataset </li>
-<li> build backend </li>
-<li> crawl API for additional information </li>
-<li> beautify webpage </li>\
+## Overview of Directories
+<li><b>css</b> - holds style sheets of our web application
+<li><b>js</b> - the frontend javascript source code of the application, the codes are modularized so that every file is an implementation of a function
+<li><b>templates</b> - the frontend html code of the application, also modularized into files
 
-
-05.16 Discuss Layout and Overview of Project Procession\
-05.24 Design Queries, Find Backend Resources\
-05.30\
-06.06\
-06.13
+<b><i>combine.js</i></b> - the backend source code of the web application
